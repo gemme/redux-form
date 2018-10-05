@@ -21,3 +21,13 @@ export const matchesPassword = (value, allValues) => {
         ? null
         : 'Passwords must match';
 };
+
+export const asyncValidate = async values => {
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    await sleep(1000);
+    if(['gabriel', 'ernesto', 'manuel'].includes(values.username)) {
+        return Promise.reject({
+            username: 'Username already taken'
+        });
+    }
+};
