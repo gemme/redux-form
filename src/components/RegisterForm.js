@@ -4,7 +4,8 @@ import { customInput, customSelect } from './fields';
 import {
     required,
     minLength,
-    maxLength
+    maxLength,
+    matchesPassword
  } from '../validations';
 
 class RegisterForm extends Component {
@@ -36,6 +37,22 @@ class RegisterForm extends Component {
                     type="text"
                     label="Username"
                     validate={[required, minLength, maxLength]} />
+            </div>
+            <div>
+                <Field
+                    name="password"
+                    component={customInput}
+                    type="text"
+                    label="Password"
+                    validate={[required, minLength, maxLength]} />
+            </div>
+            <div>
+                <Field
+                    name="confirmPassword"
+                    component={customInput}
+                    type="text"
+                    label="Confirm Password"
+                    validate={[required, minLength, maxLength, matchesPassword]} />
             </div>
             <div>
                 <Field

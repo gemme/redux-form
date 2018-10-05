@@ -15,3 +15,9 @@ export const maxLength = value => {
     ? 'Value is too long'
     : null;
 };
+
+export const matchesPassword = (value, allValues) => {
+    return value === allValues.password
+        ? null
+        : 'Passwords must match';
+};
