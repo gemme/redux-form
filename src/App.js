@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import RegisterForm from './components/RegisterForm';
+import { SubmissionError } from 'redux-form';
 
 class RegisterFormContainer extends Component{
 
   submit = values => {
-    alert(JSON.stringify(values, null, 4));
+    if(['gabriel', 'ernesto', 'manuel'].includes(values.username)){
+      throw new SubmissionError({
+        username: 'Username already taken'
+      });
+    } else {
+      alert(JSON.stringify(values, null, 4));
+    }
   }
 
   getInitialValues () {
