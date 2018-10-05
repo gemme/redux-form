@@ -5,13 +5,7 @@ import { SubmissionError } from 'redux-form';
 class RegisterFormContainer extends Component{
 
   submit = values => {
-    if(['gabriel', 'ernesto', 'manuel'].includes(values.username)){
-      throw new SubmissionError({
-        username: 'Username already taken'
-      });
-    } else {
-      alert(JSON.stringify(values, null, 4));
-    }
+    alert(JSON.stringify(values, null, 4));
   }
 
   getInitialValues () {
