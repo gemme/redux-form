@@ -8,6 +8,7 @@ import {
     matchesPassword,
     asyncValidate
  } from '../validations';
+ import capitalize from 'capitalize';
 
 class RegisterForm extends Component {
     render() {
@@ -20,7 +21,9 @@ class RegisterForm extends Component {
                     component={customInput}
                     type="text"
                     label="Name"
-                    validate={required} />
+                    validate={required}
+                    normalize={capitalize}
+                     />
             </div>
             <div>
                 <Field
@@ -29,6 +32,7 @@ class RegisterForm extends Component {
                     type="text"
                     label="Surname"
                     validate={[required]}
+                    normalize={capitalize}
                     />
             </div>
             <div>
